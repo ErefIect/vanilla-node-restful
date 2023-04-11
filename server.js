@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
     createProduct(req, res);
   } else if (
     req.url.match(/\/api\/products\/([0-9]+)/) &&
-    req.method === "GET"
+    req.method === "PUT"
   ) {
     updateProduct(req, res, id);
   } else {
