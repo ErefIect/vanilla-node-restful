@@ -1,0 +1,15 @@
+{
+  "name": "vanilla-node-restful",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@types/uuid": "^9.0.1"
+  }
+}
