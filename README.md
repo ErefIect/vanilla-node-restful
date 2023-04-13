@@ -2,6 +2,13 @@
 
 write apis without any frameworks
 
+## install dependencies and run 
+
+```zsh
+npm i
+npm start
+```
+
 ## mock data
 
 generate a fake data
