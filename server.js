@@ -7,19 +7,20 @@ const {
 } = require("./controllers/productContoller");
 
 const server = http.createServer((req, res) => {
-  if (req.url === "/api/products" && req.method === "GET") {
+  const method = req.method;
+  if (req.url === "/api/products" && method === "GET") {
     getProducts(req, res);
   } else if (
     req.url.match(/\/api\/products\/([0-9]+)/) &&
-    req.method === "GET"
+    method === "GET"
   ) {
     const id = req.url.split("/")[3];
     getProduct(req, res, id);
-  } else if (req.url === "/api/products" && req.method === "POST") {
+  } else if (req.url === "/api/products" && method === "POST") {
     createProduct(req, res);
   } else if (
     req.url.match(/\/api\/products\/([0-9]+)/) &&
-    req.method === "PUT"
+    method === "PUT"
   ) {
     updateProduct(req, res, id);
   } else {
