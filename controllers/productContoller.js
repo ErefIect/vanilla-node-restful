@@ -46,9 +46,9 @@ async function createProduct(req, res) {
     }
 
     try {
-      console.log("body is ", body)
+      console.log("body is ", body);
       product = await JSON.parse(body);
-      Product.create(product)
+      Product.create(product);
     } catch (error) {
       res.writeHead(400, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ message: "Invalid data" }));
@@ -73,7 +73,15 @@ async function updateProduct(req, res, id) {
       res.writeHead(401, { "Content-Type": "application/json" });
     }
 
-    const newProduct = { ...body };
+    const { title, description, price } = JSON.parse(body);
+
+    const productData = {
+      title: title || product.title,
+      description: description || product.description,
+      price: price || product.price,
+    };
+
+    const updateProduct = await Product.create(id, productData);
 
     if (!body) {
       res.writeHead(404, { "Content-Type": "application/json" });
