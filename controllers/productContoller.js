@@ -81,7 +81,7 @@ async function updateProduct(req, res, id) {
       price: price || product.price,
     };
 
-    const updateProduct = await Product.create(id, productData);
+    const updateProduct = await Product.update(id, productData);
 
     if (!body) {
       res.writeHead(404, { "Content-Type": "application/json" });
